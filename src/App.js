@@ -1,10 +1,18 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import DogList from "./Containers/DogsList";
 import "./App.css";
+import Dogs from "./dogs";
 
 class App extends Component {
+
+  state = {
+    dogs: Dogs
+  }
+
   render() {
-    return <DogsList />;
+
+
+    return < DogList dogs={this.state.dogs} />;
   }
 }
 

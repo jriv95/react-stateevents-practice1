@@ -1,12 +1,26 @@
 import React from "react";
 
 class DogCard extends React.Component {
+
+  state = {
+    bark: false
+  }
+
+  clickHandler = () => {
+    this.setState({
+      bark: !this.state.bark
+    })
+  }
+  
+
   render() {
+
     return (
       <div>
-        <h2>{/*Dog name goes here*/}</h2>
-        <img alt="" src={""} />
-        <button onClick={""}>Bark</button>
+        <h2>{this.props.dog.name}</h2>
+        <img alt="" src={this.props.dog.img} />
+        {this.state.bark ? <h1>RUFF</h1> : null}
+        <button onClick={this.clickHandler}>Bark</button>
       </div>
     );
   }
